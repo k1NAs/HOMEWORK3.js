@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>task 3</title>
+</head>
+
+<body style="margin: 20px; display: flex; flex-direction: column; align-items: center;">
+	<div style="margin: 10px;">
+		Length: <input type="text" id="length" value="5">
+	</div>
+	<div style="margin: 10px;">
+		Min: <input type="text" id="min" value="1">
+	</div>
+	<div style="margin: 10px;">
+		Max: <input type="text" id="max" value="500">
+	</div>
+	<div style="margin: 10px;">
+		<button>push</button>
+	</div>
+	<input style="margin: 10px;" type="text" id="arr-out" value="from 1 to 500">
+
+	<script>
+
+		document.querySelector('button').onclick = function randArray() {
+
+			let l = document.querySelector('#length').value;
+			let min = document.querySelector('#min').value;
+			let max = document.querySelector('#max').value;
+			let result = [];
+
+			for (let i = 0; i < l; i++) {
+				result.push(randomInteger());
+			}
+
+			console.log(result);
+			document.querySelector('#arr-out').value = result;
+
+		}
+
+		function randomInteger(min, max) {
+			let rand = min - 0.5 + Math.random() * (max - min + 1);
+			rand = Math.round(rand);
+			return rand;
+		}
+
+	</script>
+</body>
+
+</html>
